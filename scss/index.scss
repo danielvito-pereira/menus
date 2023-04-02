@@ -1,0 +1,348 @@
+
+  $negro: #393939;
+  $tipo-principal: Helvetica, Arial, sans-serif;
+  $tipo-secundaria: Verdana;
+
+
+@media (prefers-color-scheme: dark) {
+    $negro: #ececec;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+p a {
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  background-color: transparent;
+  display: block;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Código */
+
+.header{
+  width: 100%;
+  background: #DCE9E2;
+  color: #fff;
+  padding:1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:center;
+  align-items: center;
+  .wrapper{
+    width: 90%;
+    max-width: 120rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+  }
+  .h1{
+
+  }
+  .button{
+    display: none;
+    cursor: pointer;
+    .svg{
+      width: 2em;
+      height: 2em;
+      fill: white;
+    }
+
+  }
+  .nav{
+    width: 90%;
+    display: flex;
+    .ul{
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content:center;
+      align-items: center;
+      gap: 2rem;
+      .li{
+        margin: 0 0.5em;
+      }
+    }
+    .redes{
+      display: none;
+    }
+  }
+  .botao{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 24px;
+    gap: 16px;
+    border: 1px solid #FFFFFF;
+    border-radius: 40px;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase
+  }
+
+}
+
+@media screen and (max-width:480px){
+  .header {
+    .wrapper{
+      width: 90%;
+      max-width: 120rem;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content:space-between;
+      align-items: center;
+      .container{
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .button{
+      display: block;
+      .svg2{
+        display:none;
+      }
+    }
+    .nav{/*quando o botão não estiver ativo */
+      width: 100%;
+      /* display: none;*/
+      overflow: hidden;
+      pointer-events: none;/*para não ter efeito no mouse*/
+      height: 0vh;
+      transition: all .5s ease-in-out;
+      background: #00856f;
+      display:flex;
+      flex-flow: column nowrap;
+      justify-content:space-between;
+      align-items: center;
+      
+       .ul{
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 5rem;
+        .li{
+          margin: 1em 0;
+        }
+      }
+      .redes{
+        width: 90%;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        padding-top: 2rem;
+        ul{
+          display: flex;
+          flex-flow: row nowrap;
+          gap: 1rem;
+        }
+      }
+      .botao{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 16px 32px;
+        gap: 16px;
+    
+        color: #00856F;
+        /* Secondary Colors/White */
+        
+        background: #FFFFFF;
+        border-radius: 40px;
+    
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 23px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .header .nav.activo{/*quando o botão estiver ativo */
+    /*para suavizar o efeito apenas retirei a altura e depois adicionei com um transition */
+    /*display: block;*/
+    height: 80vh;
+    pointer-events: auto;
+    background: #00856f;
+  }
+  .header.activo{
+    background: #00856f;
+    svg:nth-child(1) path {
+      fill:white;
+    }
+
+    .button{
+      .svg1{
+        display:none;
+      }
+      .svg2{
+        display:block;
+      }
+      svg:nth-child(1) path {
+        fill:white;
+      }
+    }
+  }
+}
+
+
+
+.nav{
+  ul li a {
+    color: var(--brand-light2);
+    opacity: 0.6;
+  }
+  a.button {
+    border-color: white;
+    color: white;
+  }
+   li a {
+    transition: opacity 0.4s;
+  }
+   li a:active,
+   li a:hover  {
+    opacity: 1;
+    font-weight: 700;
+  
+  } 
+  
+   li a::after{
+    content: '';
+    width: 0;
+    height: 2px;
+    left: -0.5rem;
+  
+    background-color:var(--primary-color);
+  
+    position: relative;
+    bottom:-2rem;
+    display:block;
+  
+    transition: width 0.2s;
+  }
+  
+  ul li a::after{
+      background-color:red;
+    }
+  
+   li a:hover::after{
+    padding-inline: 0.8rem;
+    width: 100%;
+  }
+   ul li a:active, 
+   ul li a:hover {
+    opacity: 1;
+  }
+  a.button:active,
+  a.button:hover{
+    background-color: var(--primary-color);
+    filter: brightness(1.3);
+    border:none;
+  }
+  
+  a.button:hover{
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+  }
+} 
+
